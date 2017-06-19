@@ -14,9 +14,21 @@
   </ion-navbar>
 </ion-header>
 
-
-
-
-<ion-content padding>
-
+<ion-content>
+  <ion-card class="borde" *ngFor="let evento of eventos | async">
+    <ion-card-content>
+      <ion-grid style="padding-top:0px">
+        <ion-row >
+          <ion-col col-12>
+            <label class="titleEvent">{{evento.titulo}}</label>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 align="right">
+            {{evento.fecha}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

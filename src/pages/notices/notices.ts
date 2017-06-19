@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-
 import { NavController } from 'ionic-angular';
-
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2';
 
 
@@ -14,7 +12,15 @@ export class NoticesPage {
 
   constructor(public navCtrl: NavController, public database: AngularFireDatabase)
   {
-    this.listado = this.database.list('ihj/noticias');
+    this.listado = this.database.list('ihj/noticias', {
+      query: {
+        orderByChild: '-fecha'
+      }
+    });
+    /*this.listado = this.database.list('ihj/noticias');
+    this.listado.map( (arr) => { return arr.reverse(); } );*/
+    
+    
     
 
     // this.listado.push({

@@ -17,28 +17,20 @@
 
 
 <ion-content>
-  <ion-card>
-
-  <!--<ion-item>
-    
-    <h2 class="f-s-name">REYNA ANGÉLICA LIMÓN HERNÁNDEZ</h2>
-    
-    
-  </ion-item>-->
+  <ion-card *ngFor="let servidor of directorio | async">
     <ion-avatar style="text-align:center">
-      <img src="img/marty-avatar.png">
+      <div align="center">
+        <img style="width:50%" src="{{servidor.rutaFoto}}">
+      </div>
     </ion-avatar>
     <div style="text-align:center; padding-left:1%; padding-right:1%">
-      <h2>HECTOR ANTONIO ENCISO ULLOA FIERRO</h2>
-      <!--<span style="text-align:center">REYNA ANGÉLICA LIMÓN HERNÁNDEZ</span>-->
+      <h2>{{servidor.nombre}}</h2>
     </div>
-  
-
   <ion-card-content>
     <div style="text-align:center">Cargo:</div>
-    <div style="text-align:center"><b>Director General</b></div>
+    <div style="text-align:center"><b>{{servidor.cargo}}</b></div>
     <div style="text-align:center">Correo electronico:</div>
-    <div style="text-align:center"><b>bahenalabz@gmail.com</b></div>
+    <div style="text-align:center"><b>{{servidor.correo}}</b></div>
   </ion-card-content>
 
   </ion-card>

@@ -11,10 +11,10 @@
 
 <ion-content>
   <ion-card *ngFor="let card of listado | async">
-    <img src="{{card.foto}}"/>
+    <img src="{{card.rutaFoto}}"/>
     <ion-card-content>
       <ion-card-title>
-        {{card.titulo}}
+        {{card.encabezado}}
       </ion-card-title>
       <p>
         {{card.descripcion}}

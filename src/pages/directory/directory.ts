@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2';
 
 /**
  * Generated class for the Directory page.
@@ -13,8 +14,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'directory.html',
 })
 export class DirectoryPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  directorio: FirebaseListObservable<any>;
+  constructor(public navCtrl: NavController, public database: AngularFireDatabase) {
+    this.directorio = this.database.list('ihj/directorio');
   }
 
   ionViewDidLoad() {

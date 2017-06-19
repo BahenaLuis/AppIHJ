@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2';
 
 /**
  * Generated class for the Events page.
@@ -14,7 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EventsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  eventos: FirebaseListObservable<any>;
+
+  constructor(public navCtrl: NavController, public database: AngularFireDatabase) {
+    this.eventos = this.database.list('ihj/eventos');
   }
 
   ionViewDidLoad() {
